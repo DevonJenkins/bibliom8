@@ -7,7 +7,7 @@ def init():
 
 def main(count, filename):
   #increase count
-  f = open(filename, "a")
+  f = open(f"records/{filename}", "a")
 
   name = input("enter a name: ")
 
@@ -17,6 +17,7 @@ def main(count, filename):
   f.write(f"{count}.{{\n")
   f.write(f"name: {name}\n")
   f.write(f"}}\n")
+  f.close()
 
   confirmation(f, filename, count)
 
@@ -29,7 +30,6 @@ def confirmation(f, filename, count):
   if conf_input == 'y' or  conf_input == 'Y':
     set_continue == True
     main(count, filename)
-    f.close
 
   elif conf_input == 'n' or conf_input == 'N':
     set_continue == False 
@@ -41,10 +41,10 @@ def confirmation(f, filename, count):
     confirmation(f, filename, count)
 
 def close_file(f, filename):
-  f.close
-
+  pass
+  f.close()
   #open text file
-  os.system(f"open {filename}")
+  os.system(f"open records/{filename}")
 
 init()
 
