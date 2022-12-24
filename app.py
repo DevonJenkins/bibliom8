@@ -53,6 +53,4 @@ def close_file(f, filename):
 init()
 
 
-#note: it would be very nice spit my newly created files into a separate
-#directory 
 
