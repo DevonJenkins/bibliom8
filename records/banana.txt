@@ -1,6 +1,0 @@
-1.{
-	name: hello
-  }
-2.{
-	name: hello
-  }
