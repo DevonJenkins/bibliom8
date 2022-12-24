@@ -2,6 +2,10 @@ import os
 
 def init():
   count = 0
+  if not os.path.isdir("records"):
+    print("no such directory /records.\n")
+    print("creating /records directory.\n")
+    os.mkdir("records")
   filename = input("enter a filename: \n") + ".txt"
   main(count, filename)
 
