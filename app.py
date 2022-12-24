@@ -15,8 +15,8 @@ def main(count, filename):
 
   #make function for writing into file
   f.write(f"{count}.{{\n")
-  f.write(f"name: {name}\n")
-  f.write(f"}}\n")
+  f.write(f"\tname: {name}\n")
+  f.write(f"  }}\n")
   f.close()
 
   confirmation(f, filename, count)
