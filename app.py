@@ -26,13 +26,25 @@ def main(count, filename ):
   #create and open new file with chosen filename
   f = open(f"records/{filename}", "a")
 
-  name = input("enter a name: ")
+  author = input("enter author/s: ")
+  title = input("enter the title: ")
+  subtitle = input("enter the subtitle: ")
+  isbn = input("enter the isbn: ")
+  lccn = input("enter the lccn: ")
+  publisher = input("enter the publisher/s: ")
+  publish_date = input("enter the publishing date: ")
 
   count = count + 1
 
   #make function for writing into file
   f.write(f"{count}.{{\n")
-  f.write(f"\tname: {name}\n")
+  f.write(f"\tauthor: {author}\n")
+  f.write(f"\ttitle: {title}\n")
+  f.write(f"\tsubtitle: {subtitle}\n")
+  f.write(f"\tisbn: {isbn}\n")
+  f.write(f"\tlccn: {lccn}\n")
+  f.write(f"\tpublisher: {publisher}\n")
+  f.write(f"\tpublish date: {publish_date}\n")
   f.write(f"  }}\n")
   f.close()#is this necessary? more testing required
 
