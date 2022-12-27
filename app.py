@@ -68,7 +68,10 @@ def check_OS(filename):
   print("OS in my system : ", my_os) # TODO delete this line for final production
 
   if my_os == "Windows":
-    os.system(f"records/{filename}")
+    #change into records directory
+    os.chdir('records')
+    #open file from records directory
+    os.system(filename)
   
   else:
     os.system(f"open records/{filename}")
