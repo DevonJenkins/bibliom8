@@ -37,16 +37,7 @@ def main(count, filename ):
   count = count + 1
 
   #make function for writing into file
-  f.write(f"{count}.{{\n")
-  f.write(f"\tauthor: {author}\n")
-  f.write(f"\ttitle: {title}\n")
-  f.write(f"\tsubtitle: {subtitle}\n")
-  f.write(f"\tisbn: {isbn}\n")
-  f.write(f"\tlccn: {lccn}\n")
-  f.write(f"\tpublisher: {publisher}\n")
-  f.write(f"\tpublish date: {publish_date}\n")
-  f.write(f"  }}\n")
-  f.close()#is this necessary? more testing required
+  write(f, count, author, title, subtitle, isbn, lccn, publisher, publish_date)
 
   confirmation(f, filename, count)
 
@@ -69,7 +60,7 @@ def close_file(f, filename):
   #this function is named confusingly. It closes the file in python but then it
   # takes the steps to open the file in terminal
 
-  f.close()
+  f.close() #is this closefile necessary?
   #windows doesn't use the same file opening convention. 
     #I'll have to check the operating system. If the operating system is  
     # windows then i must change file opening command. 
@@ -89,6 +80,18 @@ def check_OS(filename):
     os.system(f"open records/{filename}")
     #this is currently based around mac and windows assuming that most
     #librarians aren't using linux
+
+def write(f, count, author, title, subtitle, isbn, lccn, publisher, publish_date):
+  f.write(f"{count}.{{\n")
+  f.write(f"\tauthor: {author}\n")
+  f.write(f"\ttitle: {title}\n")
+  f.write(f"\tsubtitle: {subtitle}\n")
+  f.write(f"\tisbn: {isbn}\n")
+  f.write(f"\tlccn: {lccn}\n")
+  f.write(f"\tpublisher: {publisher}\n")
+  f.write(f"\tpublish date: {publish_date}\n")
+  f.write(f"  }}\n")
+  f.close() # This closefile is necessary
 
 def help(): 
   print("here is some help, friend")
