@@ -82,6 +82,9 @@ def help():
 
   greeting()
 
+#create function for clean exit of the app. 
+  #while app is running, if user types exit, then close the app. 
+
 init()
 
 
